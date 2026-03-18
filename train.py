@@ -10,7 +10,7 @@ from regvd_model import SimpleEdgeAwareUniNet
 import numpy as np
 
 # 固定随机种子，确保实验可复现
-def set_seed(seed: int = 42):
+def set_seed():
     import random
     random.seed(seed)
     np.random.seed(seed)
@@ -77,7 +77,7 @@ def eval_model(model, loader, device):
 
 # 主训练过程
 def main():
-    set_seed(41525)
+    set_seed()
 
     # 超参
     in_dim = 768
