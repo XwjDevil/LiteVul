@@ -35,9 +35,9 @@ def load_data(pkl_path, batch_size, shuffle=True, device="cuda"):
 
 def get_metrics(y_true, y_pred):
     acc = accuracy_score(y_true, y_pred)
-    prec = precision_score(y_true, y_pred, average='binary', zero_division=0)
-    rec  = recall_score(y_true, y_pred, average='binary', zero_division=0)
-    f1   = f1_score(y_true, y_pred, average='binary', zero_division=0)
+    prec = precision_score(y_true, y_pred, average='macro', zero_division=0)
+    rec  = recall_score(y_true, y_pred, average='macro', zero_division=0)
+    f1   = f1_score(y_true, y_pred, average='macro', zero_division=0)
     return acc, prec, rec, f1
 
 # 训练过程
